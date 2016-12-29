@@ -47,6 +47,7 @@ RUN export BUILD_DEPS="build-base \
                 libressl \
                 tar \
                 xz \
+                tini \
     && cd /tmp \
     && git clone https://github.com/esmil/mktorrent \
     && svn checkout http://svn.code.sf.net/p/xmlrpc-c/code/stable xmlrpc-c \
