@@ -12,11 +12,17 @@ if [ $WEBROOT != "/" ]; then
     sed -i 's|<folder>||g' /etc/nginx/nginx.conf
     mv /var/www/html/torrent /var/www/html${WEBROOT}
     sed -i 's|<webroot>|'${WEBROOT}'/|g' /var/www/html${WEBROOT}/conf/config.php
+    if [ -d /home/torrent/settings ]; then
+        cp -R /home/torrent/settings /var/www/html${WEBROOT}/share/
+    fi
 else
     sed -i 's|<webroot>|/|g' /etc/nginx/nginx.conf
     sed -i 's|<webroot_rpc>/|/|g' /etc/nginx/nginx.conf
     sed -i 's|<folder>|/torrent|g' /etc/nginx/nginx.conf
     sed -i 's|<webroot>|/|g' /var/www/html/torrent/conf/config.php
+    if [ -d /home/torrent/settings ]; then
+        cp -R /home/torrent/settings /var/www/html/torrent/share/
+    fi
 fi
 sed -i 's|<PORT_RTORRENT>|'$PORT_RTORRENT'|g' /home/torrent/.rtorrent.rc
 
