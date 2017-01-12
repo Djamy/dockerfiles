@@ -14,7 +14,7 @@
 	$saveUploadedTorrents = true;
 	$overwriteUploadedTorrents = false;
 	$topDirectory = '/data/torrents';
-	$forbidUserSettings = false;
+	$forbidUserSettings = true;
 	$scgi_port = 5000;
 	$scgi_host = "127.0.0.1";
 	$XMLRPCMountPoint = "<webroot>RPC";
