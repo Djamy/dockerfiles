@@ -44,6 +44,7 @@ docker build -t xataz/rtorrent-rutorrent:custom --build-arg WITH_FILEBOT=YES --b
 
 ### Volumes
 * /data : Folder for download torrents
+* /home/torrent/settings : Folder for ruTorrent's settings if you need to load your own settings like cookies, ratios and such. Any files in here will be copied in `/nginx/www/html/<WEBROOT>/share/`
 
 #### data Folder tree
 * /data/.watch : Rtorrent watch directory
