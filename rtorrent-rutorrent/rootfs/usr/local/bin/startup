@@ -25,7 +25,8 @@ if [ $WEBROOT != "/" ]; then
         ln -s /config/rutorrent/conf /var/www/html${WEBROOT}/conf        
     fi
     ## Externalize rutorrent share
-    if [ -d /config/rutorrent/share ]; then 
+    if [ -d /config/rutorrent/share ]; then
+        sed -i 's|$forbidUserSettings = false;|$forbidUserSettings = true;|g' /var/www/html${WEBROOT}/conf/config.php
         rm -rf /var/www/html${WEBROOT}/share 
         ln -s /config/rutorrent/share /var/www/html${WEBROOT}/share
     else
